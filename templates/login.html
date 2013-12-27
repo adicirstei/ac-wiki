@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>adicirstei Blog</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+</head>
+<body>
+
+	<h1>WiKi - Login</h1>
+
+	<div class="menu">
+	{% if user %}
+		<ul>
+			<li><a href="/logout">{{user}}(logout)</a></li>
+		</ul>
+	{% else %}
+		<ul>
+			<li><a href="/signup">register</a></li>
+		</ul>
+	{% endif %}
+	</div>
+
+	<form method="post">
+		
+		<label>
+			<div>username</div>
+			<input type="text" name="username" value="{{username}}">
+		</label>
+		<label>
+			<div>password</div>
+			<input type="password" name="password" value="{{password}}">
+		</label>  
+	  
+		<div class="error">{{error}}</div>
+		<input type="submit">
+	</form>
+
+</body>
+</html>
